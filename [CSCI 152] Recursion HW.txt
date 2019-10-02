@@ -1,0 +1,49 @@
+﻿Anton Benitez                                                                           CSCI152
+180622
+ 
+1. Count(L,a)
+        array L
+entity a
+—————— pseudocode ——————
+let x = 0
+while (x < n)
+        if (Compare(L[x], a) == true)
+                countTotal += 1
+
+
+2. Prove O(n)
+Because the usage of the Compare function is counted and all other operations are free. Compare is used n times as it’s inside a loop that operates from x = 0 to x = n - 1 which is basically n. Therefore it’s an O(n) algorithm
+
+
+3. Check(L)
+        array L
+objective: if at least  accounts are owned by the same entity, return an account
+—————— pseudocode ——————
+Check(L)
+if length of L is  1, return NULL
+Divide L into n subproblems and make each subproblem have a size of 1
+Compare the first subproblem with all the other subproblems in L
+        if (Compare(first subproblem, other subproblem ) == true)
+                Append first subproblem and other subproblem
+        else if (Compare(first subproblem, other subproblem) == false)
+                continue
+else if Compare returns false for all subproblems, the first subproblem becomes NULL
+Run Check(L) for all other subproblems of L that weren’t appended to the previous entities/subproblems. Since the previous subproblems that returned false to all subproblems have already become NULL, it can now be disregarded by all other future subproblems. Same goes with other concatenated/appended subproblems as it will now only look for non-concatenated subproblems
+Once everything has run through Check function, look if there is an element in a subproblem > . Otherwise, return NULL
+
+
+4. Proofs
+It is correct for the base case since it’s indicated in the pseudocode that if the length of L is  1, return NULL. It returns NULL when length of L = 1 because we can say that having one account means that it is unique to the owner and not fake. This is why there’s no need to check if that account owns at least accounts since there’s only one.
+
+
+The array L with n accounts is divided into n subproblem with a length of 1 for each subproblem. Here we acknowledge the possibility that every account has a unique owner.
+         
+Since we appended all the subproblems with the same owner together, we can now easily count the length of arrays under the same owner. By doing this we can now determine whether or not more than  accounts are owned by the same entity.
+
+
+5. Check if O(nlogn)
+   1. T(n) = nT(1) + O(n)
+   2. Using Master Theorem to express T(n) in Big O
+                f(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><msup><mi>n</mi><mrow><msub><mi>log</mi><mi>n</mi></msub><mfenced><mi>n</mi></mfenced></mrow></msup></mfenced></math> 
+                T(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><mrow><msup><mi>n</mi><mrow><msub><mi>log</mi><mi>n</mi></msub><mfenced><mi>n</mi></mfenced></mrow></msup><mi>log</mi><mfenced><mi>n</mi></mfenced></mrow></mfenced></math> 
+                T(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><mrow><mi>n</mi><mi>log</mi><mfenced><mi>n</mi></mfenced></mrow></mfenced></math>
