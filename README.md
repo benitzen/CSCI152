@@ -1,3 +1,3 @@
 # CSCI152
 
-This is the readme files for all CSCI152 files.
+Typo, this is the readme for csci152!
