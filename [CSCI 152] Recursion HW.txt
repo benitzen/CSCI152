@@ -47,3 +47,4 @@ Since we appended all the subproblems with the same owner together, we can now e
                 f(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><msup><mi>n</mi><mrow><msub><mi>log</mi><mi>n</mi></msub><mfenced><mi>n</mi></mfenced></mrow></msup></mfenced></math> 
                 T(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><mrow><msup><mi>n</mi><mrow><msub><mi>log</mi><mi>n</mi></msub><mfenced><mi>n</mi></mfenced></mrow></msup><mi>log</mi><mfenced><mi>n</mi></mfenced></mrow></mfenced></math> 
                 T(n) =  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3B8;</mi><mfenced><mrow><mi>n</mi><mi>log</mi><mfenced><mi>n</mi></mfenced></mrow></mfenced></math>
+                6. Maybe try harder next time
